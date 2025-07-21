@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Digital Planner</title>
+    <link rel="stylesheet" href="styles/dashboard.css" />
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">📘 Planner</div>
+            <div class="user-info">
+                <img id="user-photo" src="https://ui-avatars.com/api/?name=User" alt="User Photo" />
+                <div>
+                    <div id="user-name">User</div>
+                    <div id="user-email">email@example.com</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">📅 Calendar</a></li>
+                    <li><a href="#">✅ Tasks</a></li>
+                    <li><a href="#">📔 Journal</a></li>
+                    <li><a href="#">📈 Goals</a></li>
+                    <li><a href="#">📊 Insights</a></li>
+                    <li><a href="#">🎯 Mood</a></li>
+                    <li><a href="#">📌 Habits</a></li>
+                </ul>
+            </nav>
+            <button id="logoutBtn">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>Welcome to Your Dashboard</h1>
+            <!-- Add Task -->
+            <div class="card todo-section">
+                <h2>To-Do List</h2>
+                <div class="card todo-section">
+                    <h2>📝 To-Do List</h2>
+                    <div class="todo-input">
+                        <input type="text" id="task-input" placeholder="Enter a new task..." />
+                        <select id="priority-select">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <button id="add-task-btn">Add Task</button>
+                    </div>
+                    <ul id="task-list" class="todo-list"></ul>
+                </div>
+
+                <!-- Widgets -->
+                <section class="widget-grid">
+                    <!-- Tasks Overview -->
+                    <div class="widget card">
+                        <h3>✅ Today's Tasks</h3>
+                        <p id="task-count">Loading...</p>
+                    </div>
+
+                    <!-- Goals Progress -->
+                    <div class="widget card">
+                        <h3>🎯 Goals Progress</h3>
+                        <progress id="goals-progress" value="40" max="100"></progress>
+                        <span id="goals-percent">40%</span>
+                    </div>
+
+                    <!-- Mood Chart -->
+                    <div class="widget card">
+                        <h3>😊 Mood Today</h3>
+                        <canvas id="mood-chart" width="180" height="100"></canvas>
+                    </div>
+                </section>
+
+                <!-- Drag Tasks -->
+                <div class="task-drag-area">
+                    <h3>📝 Drag Tasks</h3>
+                    <div class="draggable-task" draggable="true">Finish Homework</div>
+                    <div class="draggable-task" draggable="true">Team Meeting</div>
+                    <div class="draggable-task" draggable="true">Gym Session</div>
+                </div>
+
+                <!-- Calendar Section -->
+                <div class="calendar-container card">
+                    <div class="calendar-header">
+                        <h2>📅 Your Calendar</h2>
+                        <div class="calendar-tabs">
+                            <button class="tab-button active" data-view="month">Month</button>
+                            <button class="tab-button" data-view="week">Week</button>
+                            <button class="tab-button" data-view="day">Day</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-views">
+                        <!-- Month View -->
+                        <!-- Monthly View -->
+                        <div id="month-view" class="calendar-view active">
+                            <div class="calendar-header">
+                                <button id="prev-month">←</button>
+                                <h2 id="month-label">Month Year</h2>
+                                <button id="next-month">→</button>
+                            </div>
+                            <div class="month-grid" id="month-grid"></div>
+                        </div>
+
+                        <!-- Week View -->
+                        <div id="week-view" class="calendar-view week-calendar">
+                            <div class="week-header">
+                                <div class="time-column-header"></div>
+                                <div class="day-column-header">Mon</div>
+                                <div class="day-column-header">Tue</div>
+                                <div class="day-column-header">Wed</div>
+                                <div class="day-column-header">Thu</div>
+                                <div class="day-column-header">Fri</div>
+                                <div class="day-column-header">Sat</div>
+                                <div class="day-column-header">Sun</div>
+                            </div>
+                            <div class="week-body" id="week-grid"></div>
+                        </div>
+
+                        <!-- Day View -->
+                        <div id="day-view" class="calendar-view">
+                            Day view coming soon...
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="scripts/firebase.js"></script>
+    <script type="module" src="scripts/dashboard.js"></script>
+    <script type="module" src="scripts/calendar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Digital Planner</title>
+  <link rel="stylesheet" href="styles/login&signup.css" />
+  <script type="module" src="scripts/firebase.js"></script>
+  <script type="module" src="scripts/login.js"></script>
+</head>
+<body>
+  <header><img src="assets/logo.jpeg" alt="Logo" style="height: 40px; vertical-align: middle;"> Digital Planner and Journal</header>
+
+  <main>
+    <div id="intro">
+      <h1>Welcome Back!</h1>
+      <p>Login to continue planning and journaling your day.</p>
+    </div>
+
+    <div class="card">
+      <form id="login">
+        <input type="email" id="emailId" placeholder="Enter your email id..." required />
+        <input type="password" id="password" placeholder="Enter your password..." required />
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="or">or login with</div>
+      <div class="social-buttons">
+        <button type="button" id="googleLogin">Google</button>
+        <button type="button" id="facebookLogin">Facebook</button>
+        <button type="button" id="githubLogin">GitHub</button>
+      </div>
+
+      <p class="switch-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2025 Digital Planner & Journal — All rights reserved</div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help</a>
+    </div>
+  </footer>
+</body>
+</html>
